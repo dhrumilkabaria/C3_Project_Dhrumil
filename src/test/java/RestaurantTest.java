@@ -71,4 +71,18 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    //>>>>>>>>>>>>>>>>>>>>>>Get Order Value<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    @Test
+    public void order_value_should_be_380_when_SweetCornSoup_and_Vegetable_lasagne_are_ordered() throws restaurantNotFoundException {
+        //Arrange
+        List<String> orderedItemNames = Arrays.asList("Sweet corn soup", "Vegetable lasagne");
+
+        //Act
+        int totalOrderValue = restaurant.getOrderValue(orderedItemNames);
+
+        //Assert
+        assertThat(totalOrderValue, equalTo(388));
+    }
+    //<<<<<<<<<<<<<<<<<<<<Get Order Value>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
